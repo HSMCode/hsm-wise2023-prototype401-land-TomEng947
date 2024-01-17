@@ -12,6 +12,8 @@ public class MoleControl : MonoBehaviour
     private CapsuleCollider collider;
     private MoleControl MoleControlScript;
 
+    public AudioSource hit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -84,11 +86,5 @@ public class MoleControl : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Hit") 
-        {
-        
-        }
-    }
+    
 }

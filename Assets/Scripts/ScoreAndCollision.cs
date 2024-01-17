@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMove : MonoBehaviour
+public class ScoreAndCollision : MonoBehaviour
 {
+
     public AudioSource hit;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,7 @@ public class ObjectMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-0.1f, 0, 0);
+        
     }
 
     void OnTriggerEnter(Collider other)
