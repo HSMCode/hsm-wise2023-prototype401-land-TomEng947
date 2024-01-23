@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMove : MonoBehaviour
+public class ObjectMove2: MonoBehaviour
 {
     public AudioSource hit;
     public static bool combo;
@@ -17,7 +17,7 @@ public class ObjectMove : MonoBehaviour
     {
         transform.position += new Vector3(-0.2f, 0, 0);
 
-        if (transform.position.x < -4 && transform.position.x > -8 && MoleControl.oben == 1)
+        if (transform.position.x < -4 && transform.position.x > -8 && MoleControl.oben == 2)
         {
             hit.Play();
             transform.position += new Vector3(-10f, 0, 0);
