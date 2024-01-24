@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -157,20 +158,29 @@ public class Spawner : MonoBehaviour
                 count++;
             }
         }
+
+        if (count > 235)
+        {
+            Score.levelEnd = true;
+        }
+        if (count > 240 && Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     void Spawn()
     {
-        Instantiate(Object, new Vector3(107f, 0.7f, 0), Quaternion.Euler(0f, 90f, 0f));
+        Instantiate(Object, new Vector3(107f, 0.7f, 0), Quaternion.Euler(0f, -90f, 0f));
     }
 
     void Spawn2()
     {
-        Instantiate(Object2, new Vector3(107f, -3f, 0), Quaternion.Euler(0f, 90f, 0f));
+        Instantiate(Object2, new Vector3(107f, -3f, 0), Quaternion.Euler(0f, -90f, 0f));
     }
 
     void Spawn3()
     {
-        Instantiate(Object3, new Vector3(107f, 5f, 0), Quaternion.Euler(0f, 90f, 0f));
+        Instantiate(Object3, new Vector3(107f, 5f, 0), Quaternion.Euler(0f, -90f, 0f));
     }
 }

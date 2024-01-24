@@ -21,7 +21,12 @@ public class ObjectMove3 : MonoBehaviour
         {
             hit.Play();
             transform.position += new Vector3(-10f, 0, 0);
-            
+            Score.nom20 = true;
+        }
+        else if (transform.position.x < -11 && transform.position.x >= -13)
+        {
+            Score.streakloss = true;
+            Destroy(gameObject);
         }
 
         if (transform.position.x < -22) 
