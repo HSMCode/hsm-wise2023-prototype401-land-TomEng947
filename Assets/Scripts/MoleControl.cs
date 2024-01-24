@@ -33,7 +33,7 @@ public class MoleControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( (Score.levelEnd == false))
+        if ( Score.levelEnd == false && Score.levelStart == true)
         {
         
             t += Time.deltaTime;
@@ -41,6 +41,8 @@ public class MoleControl : MonoBehaviour
             if (oben == 2)
             {
                 jump += Time.deltaTime;
+                if (transform.position.y < -3)
+                transform.position = new Vector3(-6, -3f, 0);
             }
 
             if (Input.GetKeyDown("space") && oben == 1)

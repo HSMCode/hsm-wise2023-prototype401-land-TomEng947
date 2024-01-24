@@ -5,21 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject Object, Object2, Object3;
+    public GameObject Object, Object2, Object3, stone, stone2;
 
     public float spawn, timer;
     public int count;
+    public bool stonespawn;
     // Start is called before the first frame update
     void Start()
     {
         count = 1;
         spawn = 0;
+        Score.levelStart = false;
+        Score.levelEnd = false;
+        stonespawn = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
+
+        //Hinderniss
+
+        if (stonespawn == true)
+        {
+            if (count == 17 || count == 29 || count == 54 || count == 67 || count == 88 || count == 113)
+            {
+                stonespawn = false;
+                Stone();
+            }
+            if (count == 8 || count == 71 || count == 201)
+            {
+                stonespawn = false;
+                Stone2();
+            }
+        }
+
         if (timer >= 0.63163f)
         {
             timer = timer - 0.63163f;
@@ -31,6 +52,7 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 count++;
+                stonespawn = true;
             }
             else if (count == 2 || count == 4 || count == 6 || count == 10 || count == 12 || count == 14 || count == 16 || count == 18 || count == 25 || count == 27 || count == 29  || count == 43 
                      || count == 45 || count == 47 || count == 50 || count == 59 || count == 67 || count == 69 || count == 71 || count == 72 || count == 73 || count == 92 || count == 97 || count == 99  ||
@@ -39,22 +61,20 @@ public class Spawner : MonoBehaviour
             {
                 Spawn2();
                 count++;
+                stonespawn = true;
             }
             else if (count == 21 || count == 31 || count == 75 || count == 77 ||  count == 105 || count == 212 || count == 214)
             {
                 Spawn3();
                 count++;
+                stonespawn = true;
             }
             else
             {
                 count++;
+                stonespawn = true;
             }
 
-            //Hinderniss
-            if(count == 999 || count == 999)
-            {
-
-            }
         } 
 
         // Hälfte
@@ -65,17 +85,20 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 count++;
+                stonespawn = true;
             }
             else if (count == 17 || count == 28 || count == 39 || count == 57 || count == 59 || count == 63 || count == 83 || count == 90 || count == 110 || count == 127 || count == 137 || count == 143
                      || count == 178 || count == 194 || count == 200 || count == 208)
             {
                 Spawn2();
                 count++;
+                stonespawn = true;
             }
             else if (count == 22 || count == 76 || count == 213 || count == 215)
             {
                 Spawn3();
                 count++;
+                stonespawn = true;
             }
         }
 
@@ -86,16 +109,19 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 count++;
+                stonespawn = true;
             }
             else if (count == 82 || count == 139 || count == 156 || count == 160 || count == 166 || count == 173 || count == 190 || count == 196 || count == 207)
             {
                 Spawn2();
                 count++;
+                stonespawn = true;
             }
             else if (count == 999)
             {
                 Spawn3();
                 count++;
+                stonespawn = true;
             }
         }
 
@@ -106,16 +132,19 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 count++;
+                stonespawn = true;
             }
             else if (count == 84 || count == 111 || count == 162 || count == 168 || count == 184 || count == 186 || count == 188 || count == 205 || count == 209)
             {
                 Spawn2();
                 count++;
+                stonespawn = true;
             }
             else if (count == 999)
             {
                 Spawn3();
                 count++;
+                stonespawn = true;
             }
         }
 
@@ -126,16 +155,19 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 count++;
+                stonespawn = true;
             }
             else if (count == 53 || count == 87 || count == 94 || count == 101 || count == 114 || count == 148 )
             {
                 Spawn2();
                 count++;
+                stonespawn = true;
             }
             else if (count == 32 )
             {
                 Spawn3();
                 count++;
+                stonespawn = true;
             }
         }
 
@@ -146,17 +178,25 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 count++;
+                stonespawn = true;
             }
             else if (count == 54 || count == 88 || count == 95 || count == 102 || count == 115 || count == 125 || count == 149)
             {
                 Spawn2();
                 count++;
+                stonespawn = true;
             }
             else if (count == 33 || count == 104)
             {
                 Spawn3();
                 count++;
+                stonespawn = true;
             }
+        }
+
+        if (count > 1)
+        {
+            Score.levelStart = true;
         }
 
         if (count > 235)
@@ -182,5 +222,15 @@ public class Spawner : MonoBehaviour
     void Spawn3()
     {
         Instantiate(Object3, new Vector3(107f, 5f, 0), Quaternion.Euler(0f, -90f, 0f));
+    }
+
+    void Stone()
+    {
+        Instantiate(stone, new Vector3(107f, 0.73f, 0), Quaternion.Euler(0f, 0f, 0f));
+    }
+
+    void Stone2()
+    {
+        Instantiate(stone2, new Vector3(107f, -3f, 0), Quaternion.Euler(0f, 0f, 0f));
     }
 }

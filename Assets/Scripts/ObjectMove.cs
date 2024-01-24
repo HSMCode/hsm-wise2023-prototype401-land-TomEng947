@@ -5,11 +5,10 @@ using UnityEngine;
 public class ObjectMove : MonoBehaviour
 {
     public AudioSource hit;
-    public static bool combo;
     // Start is called before the first frame update
     void Start()
     {
-        combo = true; 
+      
     }
 
     // Update is called once per frame

@@ -8,7 +8,8 @@ using TMPro;
 public class Menu : MonoBehaviour
 {
     public static float highscoreTutorial, highscorePortOrmos;
-    public int level, start;
+    public static int level;
+    public int start;
     public bool click;
     public TextMeshProUGUI hsTutorial, hsPortOrmos;
     public RectTransform PortOrmosImage, PortOrmosText, PortOrmosHighscoreText, PortOrmosHighscore;
@@ -22,16 +23,16 @@ public class Menu : MonoBehaviour
         start = 0;
         click = false;
 
-        StartImage.anchoredPosition = new Vector2(5, 12);
-        StartText.anchoredPosition = new Vector2(-82, -188);
-        TutorialImage.anchoredPosition = new Vector2(700, 12);
+        StartImage.anchoredPosition = new Vector2(5, 30);
+        StartText.anchoredPosition = new Vector2(0, 44);
+        TutorialImage.anchoredPosition = new Vector2(700, 30);
         TutorialText.anchoredPosition = new Vector2(618, -188);
         TutorialHighscoreText.anchoredPosition = new Vector2(624, -231);
         TutorialHighscore.anchoredPosition = new Vector2(664, -258);
-        PortOrmosImage.anchoredPosition = new Vector2(-700, 12);
-        PortOrmosText.anchoredPosition = new Vector2(-782, -188);
-        PortOrmosHighscoreText.anchoredPosition = new Vector2(-776, -231);
-        PortOrmosHighscore.anchoredPosition = new Vector2(-736, -258);
+        PortOrmosImage.anchoredPosition = new Vector2(-700, 30);
+        PortOrmosText.anchoredPosition = new Vector2(-782, -178);
+        PortOrmosHighscoreText.anchoredPosition = new Vector2(-776, -221);
+        PortOrmosHighscore.anchoredPosition = new Vector2(-736, -248);
 
         hsTutorial.text = highscoreTutorial.ToString();
         hsPortOrmos.text = highscorePortOrmos.ToString();
@@ -57,7 +58,11 @@ public class Menu : MonoBehaviour
         }
         if (start >= 60)
         {
-            if (level == 2)
+            if (level == 1)
+            {
+                SceneManager.LoadScene("CheckerDance");
+            }
+            else if (level == 2)
             {
                 SceneManager.LoadScene("PortOrmos");
             }
@@ -82,7 +87,7 @@ public class Menu : MonoBehaviour
                 PortOrmosHighscore.anchoredPosition += new Vector2(-10, 0);
                 StartImage.anchoredPosition += new Vector2(-10, 0);
                 StartText.anchoredPosition += new Vector2(-10, 0);
-                TutorialImage.anchoredPosition = new Vector2(700, 12);
+                TutorialImage.anchoredPosition = new Vector2(700, 30);
                 TutorialText.anchoredPosition = new Vector2(618, -188);
                 TutorialHighscoreText.anchoredPosition = new Vector2(624, -231);
                 TutorialHighscore.anchoredPosition = new Vector2(664, -258);
@@ -96,10 +101,10 @@ public class Menu : MonoBehaviour
         {
             if (TutorialImage.anchoredPosition.x > 5)
             {
-                PortOrmosImage.anchoredPosition = new Vector2(700, 12);
-                PortOrmosText.anchoredPosition = new Vector2(618, -188);
-                PortOrmosHighscoreText.anchoredPosition = new Vector2(624, -231);
-                PortOrmosHighscore.anchoredPosition = new Vector2(664, -258);
+                PortOrmosImage.anchoredPosition = new Vector2(700, 30);
+                PortOrmosText.anchoredPosition = new Vector2(618, -178);
+                PortOrmosHighscoreText.anchoredPosition = new Vector2(624, -221);
+                PortOrmosHighscore.anchoredPosition = new Vector2(664, -248);
                 StartImage.anchoredPosition += new Vector2(-10, 0);
                 StartText.anchoredPosition += new Vector2(-10, 0);
                 TutorialImage.anchoredPosition += new Vector2(-10, 0);
@@ -120,8 +125,8 @@ public class Menu : MonoBehaviour
                 PortOrmosText.anchoredPosition += new Vector2(-10, 0);
                 PortOrmosHighscoreText.anchoredPosition += new Vector2(-10, 0);
                 PortOrmosHighscore.anchoredPosition += new Vector2(-10, 0);
-                StartImage.anchoredPosition = new Vector2(700, 12);
-                StartText.anchoredPosition = new Vector2(618, -188);
+                StartImage.anchoredPosition = new Vector2(700, 30);
+                StartText.anchoredPosition = new Vector2(700, 44);
                 TutorialImage.anchoredPosition += new Vector2(-10, 0);
                 TutorialText.anchoredPosition += new Vector2(-10, 0);
                 TutorialHighscoreText.anchoredPosition += new Vector2(-10, 0);

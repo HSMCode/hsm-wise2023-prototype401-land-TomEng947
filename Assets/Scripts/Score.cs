@@ -9,7 +9,7 @@ using System;
 public class Score : MonoBehaviour
 {
 
-    public static bool nom5 = false, nom10 = false, nom20 = false, streakloss = false, levelEnd = false;
+    public static bool nom5 = false, nom10 = false, nom20 = false, streakloss = false, levelEnd = false, levelStart = false;
     public int  multiplier = 1, multiplierlol = 0, newHighscore = 0;
     public float score = 0;
 
@@ -18,13 +18,13 @@ public class Score : MonoBehaviour
     public AudioSource fail;
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         nom5 = false;
         nom10 = false;
         nom20 = false;
         streakloss = false;
         levelEnd = false;
-        newHighscore = 1;
+        newHighscore = 0;
         score = 0;
         multiplier = 1;
         multiplierlol = 0;
@@ -79,7 +79,12 @@ public class Score : MonoBehaviour
         if(levelEnd == true)
         {
             scoreEnd.text = "Score: " + score.ToString();
-            if (score > Menu.highscorePortOrmos)
+            if (score > Menu.highscoreTutorial && Menu.level == 1)
+            {
+                newHighscore = 1;
+                Menu.highscoreTutorial = score;
+            }
+            else if (score > Menu.highscorePortOrmos && Menu.level == 2)
             {
                 newHighscore = 1;
                 Menu.highscorePortOrmos = score;

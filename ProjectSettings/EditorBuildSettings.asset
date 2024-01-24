@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 0a28a80e6d5bd4648825433b39602f45
   - enabled: 1
+    path: Assets/Scenes/CheckerDance.unity
+    guid: 2389ff7c7f3c79f4195445443dcf2fd6
+  - enabled: 1
     path: Assets/Scenes/PortOrmos.unity
     guid: 59bf9536bcfe11a41ae53b2d4e2eb807
   m_configObjects: {}
