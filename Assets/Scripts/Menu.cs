@@ -48,22 +48,24 @@ public class Menu : MonoBehaviour
             {
                 level = 0;
                 click = false;
-                start = 0;
             }
             else
             {
                 level++;
                 click = false;
-                start = 0;
             }
         }
-        else if (Input.GetKeyUp("space") && start >= 60)
+        if (start >= 60)
         {
             if (level == 2)
             {
                 SceneManager.LoadScene("PortOrmos");
             }
         }
+        if (Input.GetKeyUp("space"))
+            {
+            start = 0;
+            }
 
         if (Input.GetKey("space"))
         {
