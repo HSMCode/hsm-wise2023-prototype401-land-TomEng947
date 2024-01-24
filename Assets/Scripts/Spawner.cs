@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public float spawn, timer;
     public int count;
     public bool stonespawn;
+    public bool fix;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class Spawner : MonoBehaviour
         Score.levelStart = false;
         Score.levelEnd = false;
         stonespawn = true;
+        fix = false;
     }
 
     // Update is called once per frame
@@ -27,6 +29,12 @@ public class Spawner : MonoBehaviour
 
         //Hinderniss
 
+        if (count == 80 && fix == false) 
+        {
+            count = count + 1;
+            fix = true;
+        }
+
         if (stonespawn == true)
         {
             if (count == 17 || count == 29 || count == 54 || count == 67 || count == 88 || count == 113)
@@ -34,7 +42,7 @@ public class Spawner : MonoBehaviour
                 stonespawn = false;
                 Stone();
             }
-            if (count == 8 || count == 71 || count == 201)
+            if (count == 8 || count == 71)
             {
                 stonespawn = false;
                 Stone2();

@@ -52,13 +52,13 @@ public class Spawner2 : MonoBehaviour
                 Spawn();
                 count++;
             }
-            else if (count == 44 || count == 46 || count == 60 || count == 62 || count == 72 || count == 75 || count == 77 || count == 83 || count == 85 || count == 99 || count == 102 || count == 104 || count == 106 
-                     || count == 110)
+            else if (count == 44 || count == 46 || count == 60 || count == 62 || count == 72 || count == 75 || count == 77 || count == 83 || count == 85 || count == 99 || count == 102 || count == 104 || count == 106
+                     || count == 112 || count == 113)
             {
                 Spawn2();
                 count++;
             }
-            else if (count == 50 || count == 51 || count == 66 || count == 67)
+            else if (count == 50 || count == 51 || count == 66 || count == 67 || count == 116)
             {
                 Spawn3();
                 count++;
@@ -82,7 +82,7 @@ public class Spawner2 : MonoBehaviour
                 Spawn2();
                 count++;
             }
-            else if (count == 999 || count == 999)
+            else if (count == 117 || count == 999)
             {
                 Spawn3();
                 count++;
@@ -97,7 +97,7 @@ public class Spawner2 : MonoBehaviour
                 Spawn();
                 count++;
             }
-            else if (count == 100 || count == 999)
+            else if (count == 100)
             {
                 Spawn2();
                 count++;
@@ -112,12 +112,12 @@ public class Spawner2 : MonoBehaviour
         // Viertel 2
         else if (timer >= 0.28125f && timer <= 0.29125f)
         {
-            if (count == 101 || count == 111)
+            if (count == 101)
             {
                 Spawn();
                 count++;
             }
-            else if (count == 97 || count == 999)
+            else if (count == 97 || count == 111)
             {
                 Spawn2();
                 count++;

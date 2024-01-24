@@ -10,10 +10,11 @@ public class MoleControl : MonoBehaviour
     private int jumpForce;
     //public bool oben;
     private Rigidbody rb;
-    private CapsuleCollider collider;
+    private CapsuleCollider colliderstuff;
     private MoleControl MoleControlScript;
 
     public AudioSource hit;
+    private bool fix = false;
 
 
     // Start is called before the first frame update
@@ -25,9 +26,10 @@ public class MoleControl : MonoBehaviour
         t = 0;
         jumpForce = 13;
         rb = GetComponent<Rigidbody>();
-        collider = GetComponent<CapsuleCollider>();
+        colliderstuff = GetComponent<CapsuleCollider>();
         oben = 1;
         intheAir = 0;
+        fix = false;
     }
 
     // Update is called once per frame
@@ -60,7 +62,7 @@ public class MoleControl : MonoBehaviour
             {
                 oben = 4;
                 jump = 0;
-                collider.enabled = false;
+                colliderstuff.enabled = false;
                 rb.useGravity = true;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
@@ -90,11 +92,16 @@ public class MoleControl : MonoBehaviour
                 }
                 if (intheAir > 2.3)
                 {
-                    collider.enabled = true;
+                    colliderstuff.enabled = true;
                     oben = 1;
                     intheAir = 0;
                 }
             }
+        }
+        else if (Score.levelEnd == true && fix == false)
+        {
+            fix = true;
+            transform.position = new Vector3(-6, -2.4f, 0);
         }
     }
 

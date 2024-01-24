@@ -1017,7 +1017,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1562967565}
-  - component: {fileID: 1562967564}
   - component: {fileID: 1562967566}
   m_Layer: 0
   m_Name: Spawn
@@ -1026,18 +1025,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1562967564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562967563}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31119e2f04d04d74488998cdd09abe67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1562967565
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,6 +1060,8 @@ MonoBehaviour:
   spawn: 0
   timer: 0
   count: 0
+  stonespawn: 0
+  fix: 0
 --- !u!1 &1655802919
 GameObject:
   m_ObjectHideFlags: 0
